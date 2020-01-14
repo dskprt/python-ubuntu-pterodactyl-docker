@@ -2,10 +2,10 @@
 cd /home/container
 
 # Output Current Python Version
-python3 -version
+python3 --version
 
 # Make internal Docker IP address available to processes.
-export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
+# export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
