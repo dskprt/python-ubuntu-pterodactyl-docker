@@ -7,7 +7,8 @@ FROM ubuntu:bionic
 
 MAINTAINER dskprt, <59660013+dskprt@users.noreply.github.com>
 
-RUN add-apt-repository 'deb http://pl.archive.ubuntu.com/ubuntu/ bionic main' \
+RUN echo 'deb http://pl.archive.ubuntu.com/ubuntu/ bionic main' > /etc/apt/sources.list \
+    && apt-get update
     && apt-get install curl git openssl tar sqlite fontconfig python3 python3-pip \
     && adduser -D -h /home/container container
 
